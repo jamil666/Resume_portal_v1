@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New User Page</title>
+</head>
+<body>
+
+    <form method="post" action={% url 'NewUser' %}>
+
+        {% csrf_token %}
+
+        <div align="center">
+
+            <h1>Please fill all fields!</h1>
+
+            <p> First Name: {{ Login_form.FirstName}} </p>
+            <p> Last Name: {{ Login_form.LastName}} </p>
+            <p> Username: {{ Login_form.Username}} </p>
+            <p> Password: {{ Login_form.Password}} </p>
+
+            <input type="submit" value="Create Account">
+
+        </div>
+
+    </form>
+
+    <form method="post" action={% url 'Login' %}>
+        <div align="center">
+        {% csrf_token %}
+        <br>
+        <input type="submit" value="Back to login menu">
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Resume</title>
+
+{% load static %}
+
+<link type="text/css" rel="stylesheet" href={% static "css/blue.css" %} />
+<link type="text/css" rel="stylesheet" href={% static "css/print.css" %} media="print"/>
+<!--[if IE 7]>
+<link href={% static "css/ie7.css" %} rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<link href={% static "css/ie6.css" %} rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src={% static "js/jquery-1.4.2.min.js" %}></script>
+<script type="text/javascript" src={% static "js/jquery.tipsy.js" %}></script>
+<script type="text/javascript" src={% static "js/cufon.yui.js" %}></script>
+<script type="text/javascript" src={% static "js/scrollTo.js" %}></script>
+<script type="text/javascript" src={% static "js/myriad.js" %}></script>
+<script type="text/javascript" src={% static "js/jquery.colorbox.js" %}></script>
+<script type="text/javascript" src={% static "js/custom.js" %}></script>
+<script type="text/javascript">
+		Cufon.replace('h1,h2');
+</script>
+</head>
+<body>
+<!-- Begin Wrapper -->
+<div id="wrapper">
+  <div class="wrapper-top"></div>
+  <div class="wrapper-mid">
+    <!-- Begin Paper -->
+    <div id="paper">
+      <div class="paper-top"></div>
+      <div id="paper-mid">
+        <div class="entry">
+          <!-- Begin Image -->
+          <img class="portrait" src="{% static "images/profile_photos/" %}{{ userinfo.PhotoName }}"  alt="MyPhoto" >
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">{{ FullName }} <br /><br />
+              <span>{{ userinfo.Position }}</span></h1>
+            <ul>
+              <li class="ad">{{ userinfo.Address }}</li>
+              <li class="mail">{{ userinfo.Email }}</li>
+              <li class="tel">{{ userinfo.Tel }}</li>
+
+
+            </ul>
+          </div>
+          <!-- End Personal Information -->
+          <!-- Begin Social -->
+          <div class="social" style="margin-right: -10%" >
+            <ul>
+              <li><a class='north' href="pdf" title="Download .pdf"><img src={% static "images/icn-save.jpg" %} alt="Download the pdf version" /></a></li>
+              <li><a class='north' href="javascript:window.print()" title="Print"><img src={% static "images/icn-print.jpg" %} alt="" /></a></li>
+              <li><a class='north' id="contact" href="/contact.html" title="Contact Me"><img src={% static "images/icn-contact.jpg" %} alt="" /></a></li>
+              <li><a class='north' href="{{ userinfo.LinkedIn }}" title="My Linkedin Profile"><img style="height:23px;width:23px",
+                                   src={% static "images/icn-linkedin.jpg" %} alt="" /></a></li>
+            </ul>
+          </div>
+          <!-- End Social -->
+        </div>
+        <!-- Begin 1nd Row -->
+        <div class="entry">
+          <h2>EDUCATION</h2>
+          <div class="content">
+
+              {% if userinfo.Study_Place_1 %}
+                  <h3>{{ userinfo.Date_01 }}</h3>
+                  <p>{{ userinfo.Study_Place_1 }} <br />
+                  <em>{{ userinfo.Degree_1 }} </em></p>
+              {% endif %}
+
+              {% if userinfo.Study_Place_2 %}
+                  <h3>{{ userinfo.Date_02 }}</h3>
+                  <p>{{ userinfo.Study_Place_2 }} <br />
+                  <em>{{ userinfo.Degree_2 }} </em></p>
+              {% endif %}
+
+              {% if userinfo.Study_Place_3 %}
+                  <h3>{{ userinfo.Date_03 }}</h3>
+                  <p>{{ userinfo.Study_Place_3 }} <br />
+                  <em>{{ userinfo.Degree_3 }} </em></p>
+              {% endif %}
+
+              {% if userinfo.Study_Place_4 %}
+                  <h3>{{ userinfo.Date_04 }}</h3>
+                  <p>{{ userinfo.Study_Place_4 }} <br />
+                  <em>{{ userinfo.Degree_4 }} </em></p>
+              {% endif %}
+
+          </div>
+        </div>
+        <!-- End 1nd Row -->
+        <!-- Begin 2rd Row -->
+        <div class="entry">
+          <h2>WORK <br />EXPERIENCE</h2><br /><br />
+
+                    <div class="content">
+
+                        {% if  userinfo.Work1 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate1 }}</h3>
+                            <p> {{ userinfo.Work1 }}<br />
+                            <em>{{ userinfo.Position1 }}</em></p>
+                        {% endif %}
+
+                        {% if  userinfo.Work2 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate2 }}</h3>
+                            <p> {{ userinfo.Work2 }}<br />
+                            <em>{{ userinfo.Position2 }}</em></p>
+                        {% endif %}
+
+                        {% if  userinfo.Work3 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate3 }}</h3>
+                            <p> {{ userinfo.Work3 }}<br />
+                            <em>{{ userinfo.Position3 }}</em></p>
+                        {% endif %}
+
+                        {% if  userinfo.Work4 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate4 }}</h3>
+                            <p> {{ userinfo.Work4 }}<br />
+                            <em>{{ userinfo.Position4 }}</em></p>
+                        {% endif %}
+
+                        {% if  userinfo.Work5 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate5 }}</h3>
+                            <p> {{ userinfo.Work5 }}<br />
+                            <em>{{ userinfo.Position5 }}</em></p>
+                        {% endif %}
+
+                        {% if  userinfo.Work6 %}
+                            <h3 class="hhh" >{{ userinfo.WorkDate6 }}</h3>
+                            <p> {{ userinfo.Work6 }}<br />
+                            <em>{{ userinfo.Position6 }}</em></p>
+                        {% endif %}
+          </div>
+
+        </div>
+        <!-- End 2rd Row -->
+        <!-- Begin 3th Row -->
+        <div class="entry">
+          <h2>SKILLS</h2>
+          <div class="content">
+            <h3>Software Knowledge</h3>
+            <ul class="skills">
+
+                      <li>{{ userinfo.Skill_1 }}</li>
+                      <li>{{ userinfo.Skill_2 }}</li>
+                      <li>{{ userinfo.Skill_3 }}</li>
+                      <li>{{ userinfo.Skill_4 }}</li>
+                      <li>{{ userinfo.Skill_5 }}</li>
+                      <li>{{ userinfo.Skill_6 }}</li>
+                      <li>{{ userinfo.Skill_7 }}</li>
+                      <li>{{ userinfo.Skill_8 }}</li>
+                      <li>{{ userinfo.Skill_9 }}</li>
+                      <li>{{ userinfo.Skill_10 }}</li>
+                      <li>{{ userinfo.Skill_11 }}</li>
+                      <li>{{ userinfo.Skill_12 }}</li>
+                      <li>{{ userinfo.Skill_13 }}</li>
+                      <li>{{ userinfo.Skill_14 }}</li>
+                      <li>{{ userinfo.Skill_15 }}</li>
+                      <li>{{ userinfo.Skill_16 }}</li>
+                      <li>{{ userinfo.Skill_17 }}</li>
+                      <li>{{ userinfo.Skill_18 }}</li>
+                      <li>{{ userinfo.Skill_19 }}</li>
+                      <li>{{ userinfo.Skill_20 }}</li>
+                      <li>{{ userinfo.Skill_21 }}</li>
+                      <li>{{ userinfo.Skill_22 }}</li>
+                      <li>{{ userinfo.Skill_23 }}</li>
+                      <li>{{ userinfo.Skill_24 }}</li>
+                      <li>{{ userinfo.Skill_25 }}</li>
+                      <li>{{ userinfo.Skill_26 }}</li>
+                      <li>{{ userinfo.Skill_27 }}</li>
+                      <li>{{ userinfo.Skill_28 }}</li>
+                      <li>{{ userinfo.Skill_29 }}</li>
+                      <li>{{ userinfo.Skill_30 }}</li>
+
+            </ul>
+          </div>
+          <div class="content">
+            <h3>Languages</h3>
+            <ul class="skills">
+                {% if userinfo.Language_1 %}
+                    <li>{{ userinfo.Language_1 }} - {{ userinfo.Language_1_Quality }}</li>
+                {% endif %}
+
+                {% if userinfo.Language_2 %}
+                    <li>{{ userinfo.Language_2 }} - {{ userinfo.Language_2_Quality }}</li>
+                {% endif %}
+
+                {% if userinfo.Language_3 %}
+                    <li>{{ userinfo.Language_3 }} - {{ userinfo.Language_3_Quality }}</li>
+                {% endif %}
+
+                {% if userinfo.Language_4 %}
+                    <li>{{ userinfo.Language_4 }} - {{ userinfo.Language_4_Quality }}</li>
+                {% endif %}
+
+                {% if userinfo.Language_5 %}
+                    <li>{{ userinfo.Language_5 }} - {{ userinfo.Language_5_Quality }}</li>
+                {% endif %}
+
+
+            </ul>
+          </div>
+        </div>
+        <!-- End 4th Row -->
+         <!-- Begin 5th Row -->
+        <div class="entry">
+        <h2>Certificates</h2>
+        	<ul class="certificates">
+
+                {% if userinfo.Certificate_1 %}
+                    <li>{{ userinfo.Certificate_1 }}</li><br/>
+                {% endif %}
+
+                {% if userinfo.Certificate_2 %}
+                        <li>{{ userinfo.Certificate_2 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_3 %}
+                        <li>{{ userinfo.Certificate_3 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_4 %}
+                        <li>{{ userinfo.Certificate_4 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_5 %}
+                        <li>{{ userinfo.Certificate_5 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_6 %}
+                        <li>{{ userinfo.Certificate_6 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_7 %}
+                        <li>{{ userinfo.Certificate_7 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_8 %}
+                        <li>{{ userinfo.Certificate_8 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_9 %}
+                        <li>{{ userinfo.Certificate_9 }}</li><br/>
+                    {% endif %}
+
+                {% if userinfo.Certificate_10 %}
+                        <li>{{ userinfo.Certificate_10 }}</li><br/>
+                    {% endif %}
+
+        	</ul>
+        </div>
+        <!-- Begin 5th Row -->
+      </div>
+      <div class="clear"></div>
+      <div class="paper-bottom"></div>
+    </div>
+    <!-- End Paper -->
+  </div>
+
+</div>
+<!-- End Wrapper -->
+</body>
+</html>

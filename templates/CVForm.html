@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+
+{% csrf_token %}
+{% load static %}
+
+<html lang="en-us" >
+<head>
+<title>CV Form Data</title>
+<link rel="stylesheet" type="text/css" href={% static "admin/css/base.css" %} />
+<link rel="stylesheet" type="text/css" href={% static "admin/css/forms.css" %}/>
+
+<script type="text/javascript" src={% static "admin/js/core.js" %}></script>
+<script type="text/javascript" src={% static "admin/js/vendor/jquery/jquery.js" %}></script>
+<script type="text/javascript" src={% static "admin/js/jquery.init.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/admin/RelatedObjectLookups.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/actions.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/urlify.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/prepopulate.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/vendor/xregexp/xregexp.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/calendar.js"%}></script>
+<script type="text/javascript" src={% static "admin/js/admin/DateTimeShortcuts.js"%}></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class=" app-cv model-profile change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/{{ userinfo.Username }}/preview">Preview your Resume</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>{{ userinfo }}</strong>
+
+        </div>
+
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    <div id="content" class="colM">
+
+        <h1>Please write all needed information</h1>
+        <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" action="" method="post" id="profile_form" novalidate><input type='hidden' name='csrfmiddlewaretoken' value='PHT4jzL1Fe8m5QUv2Kr7rG435jSQ8UKQobe8DveSJgr4DDFoMtoCj754c9ztn5W9' />
+<div>
+
+
+  <fieldset class="module aligned ">
+    <h2>Profile Info</h2>
+
+
+        <div class="form-row field-Position">
+
+
+                <div>
+
+
+                        <label for="id_Position">Position:</label>
+
+                            <input class="vTextField" id="id_Position" maxlength="200" name="Position" type="text" value="{{ userinfo.Position }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Address">
+
+
+                <div>
+
+
+                        <label for="id_Address">Address:</label>
+
+                            <input class="vTextField" id="id_Address" maxlength="255" name="Address" type="text" value="{{ userinfo.Address }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Email">
+
+
+                <div>
+
+
+                        <label for="id_Email">Email:</label>
+
+                            <input class="vTextField" id="id_Email" maxlength="100" name="Email" type="text" value="{{ userinfo.Email }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Tel">
+
+
+                <div>
+
+
+                        <label for="id_Tel">Tel:</label>
+
+                            <input class="vTextField" id="id_Tel" maxlength="100" name="Tel" type="text" value="{{ userinfo.Tel }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Photo">
+
+
+                <div>
+
+                        <label for="id_Photo">Photo:</label>
+
+                            <input id="id_Photo" name="Photo" type="file" />
+
+                    <p class="file-upload" style="padding-left: 173px">
+                        Currently:
+                            <a href={{ userinfo.Photo }}> {{ userinfo.PhotoName }} </a>
+                    <br />
+                        <span class="clearable-file-input">
+                            <input name="Photo-clear" id="Photo-clear_id" type="checkbox" />
+                            <label for="Photo-clear_id"> Clear Image: </label>
+                        </span>
+                        <br />
+
+                    </p>
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-LinkedIn">
+
+
+                <div>
+
+                        <label for="id_LinkedIn">LinkedIn:</label>
+
+                            <input class="vTextField" id="id_LinkedIn" maxlength="255" name="LinkedIn" type="text" value="{{ userinfo.LinkedIn }}" />
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Education Info</h2>
+
+
+        <div class="form-row field-Date_01">
+
+
+                <div>
+
+
+                        <label for="id_Date_01">Date 1:</label>
+
+                            <input class="vTextField" id="id_Date_01" maxlength="100" name="Date_01" type="text" value="{{ userinfo.Date_01 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Study_Place_1">
+
+
+                <div>
+
+
+                        <label for="id_Study_Place_1">Study Place 1:</label>
+
+                            <input class="vTextField" id="id_Study_Place_1" maxlength="200" name="Study_Place_1" type="text" value="{{ userinfo.Study_Place_1 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Degree_1">
+
+
+                <div>
+
+
+                        <label for="id_Degree_1">Degree 1:</label>
+
+                            <input class="vTextField" id="id_Degree_1" maxlength="200" name="Degree_1" type="text" value="{{ userinfo.Degree_1 }}"  />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Date_02">
+
+
+                <div>
+
+
+                        <label for="id_Date_02">Date 2:</label>
+
+                            <input class="vTextField" id="id_Date_02" maxlength="100" name="Date_02" type="text" value="{{ userinfo.Date_02 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Study_Place_2">
+
+
+                <div>
+
+
+                        <label for="id_Study_Place_2">Study Place 2:</label>
+
+                            <input class="vTextField" id="id_Study_Place_2" maxlength="200" name="Study_Place_2" type="text" value="{{ userinfo.Study_Place_2 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Degree_2">
+
+
+                <div>
+
+
+                        <label for="id_Degree_2">Degree 2:</label>
+
+                            <input class="vTextField" id="id_Degree_2" maxlength="200" name="Degree_2" type="text" value="{{ userinfo.Degree_2 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Date_3">
+
+
+                <div>
+
+
+                        <label for="id_Date_03">Date 3:</label>
+
+                            <input class="vTextField" id="id_Date_03" maxlength="100" name="Date_03" type="text" value="{{ userinfo.Date_03 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Study_Place_3">
+
+
+                <div>
+
+
+                        <label for="id_Study_Place_3">Study Place 3:</label>
+
+                            <input class="vTextField" id="id_Study_Place_3" maxlength="200" name="Study_Place_3" type="text" value="{{ userinfo.Study_Place_3 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Degree_3">
+
+
+                <div>
+
+
+                        <label for="id_Degree_3">Degree 3:</label>
+
+                            <input class="vTextField" id="id_Degree_3" maxlength="200" name="Degree_3" type="text" value="{{ userinfo.Degree_3 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Date_04">
+
+
+                <div>
+
+
+                        <label for="id_Date_04">Date 4:</label>
+
+                            <input class="vTextField" id="id_Date_04" maxlength="100" name="Date_04" type="text" value="{{ userinfo.Date_04 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Study_Place_4">
+
+
+                <div>
+
+
+                        <label for="id_Study_Place_4">Study Place 4:</label>
+
+                            <input class="vTextField" id="id_Study_Place_4" maxlength="200" name="Study_Place_4" type="text" value="{{ userinfo.Study_Place_4 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Degree_4">
+
+
+                <div>
+
+
+                        <label for="id_Degree_4">Degree 4:</label>
+
+                            <input class="vTextField" id="id_Degree_4" maxlength="200" name="Degree_4" type="text" value="{{ userinfo.Degree_4 }}" />
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+    <fieldset class="module aligned ">
+    <h2>Work Experience Info</h2>
+
+
+        <div class="form-row field-WorkDate1">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate1">WorkDate1:</label>
+
+                            <input name="WorkDate1" class="vTextField" id="id_WorkDate1" type="text" maxlength="100" value="{{ userinfo.WorkDate1 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work1">
+
+
+                <div>
+
+
+                        <label for="id_Work1">Work1:</label>
+
+                            <input name="Work1" class="vTextField" id="id_Work1" type="text" maxlength="100" value="{{ userinfo.Work1 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position1">
+
+
+                <div>
+
+
+                        <label for="id_Position1">Position1:</label>
+
+                            <input name="Position1" class="vTextField" id="id_Position1" type="text" maxlength="200" value="{{ userinfo.Position1 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-WorkDate2">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate2">WorkDate2:</label>
+
+                            <input name="WorkDate2" class="vTextField" id="id_WorkDate2" type="text" maxlength="100" value="{{ userinfo.WorkDate2 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work2">
+
+
+                <div>
+
+
+                        <label for="id_Work2">Work2:</label>
+
+                            <input name="Work2" class="vTextField" id="id_Work2" type="text" maxlength="100" value="{{ userinfo.Work2 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position2">
+
+
+                <div>
+
+
+                        <label for="id_Position2">Position2:</label>
+
+                            <input name="Position2" class="vTextField" id="id_Position2" type="text" maxlength="200" value="{{ userinfo.Position2 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-WorkDate3">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate3">WorkDate3:</label>
+
+                            <input name="WorkDate3" class="vTextField" id="id_WorkDate3" type="text" maxlength="100" value="{{ userinfo.WorkDate3 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work3">
+
+
+                <div>
+
+
+                        <label for="id_Work3">Work3:</label>
+
+                            <input name="Work3" class="vTextField" id="id_Work3" type="text" maxlength="100" value="{{ userinfo.Work3 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position3">
+
+
+                <div>
+
+
+                        <label for="id_Position3">Position3:</label>
+
+                            <input name="Position3" class="vTextField" id="id_Position3" type="text" maxlength="200" value="{{ userinfo.Position3 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-WorkDate4">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate4">WorkDate4:</label>
+
+                            <input name="WorkDate4" class="vTextField" id="id_WorkDate4" type="text" maxlength="100" value="{{ userinfo.WorkDate4 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work4">
+
+
+                <div>
+
+
+                        <label for="id_Work4">Work4:</label>
+
+                            <input name="Work4" class="vTextField" id="id_Work4" type="text" maxlength="100" value="{{ userinfo.Work4 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position4">
+
+
+                <div>
+
+
+                        <label for="id_Position4">Position4:</label>
+
+                            <input name="Position4" class="vTextField" id="id_Position4" type="text" maxlength="200" value="{{ userinfo.Position4 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-WorkDate5">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate5">WorkDate5:</label>
+
+                            <input name="WorkDate5" class="vTextField" id="id_WorkDate5" type="text" maxlength="100" value="{{ userinfo.WorkDate5 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work5">
+
+
+                <div>
+
+
+                        <label for="id_Work5">Work5:</label>
+
+                            <input name="Work5" class="vTextField" id="id_Work5" type="text" maxlength="100" value="{{ userinfo.Work5 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position5">
+
+
+                <div>
+
+
+                        <label for="id_Position5">Position5:</label>
+
+                            <input name="Position5" class="vTextField" id="id_Position5" type="text" maxlength="200" value="{{ userinfo.Position5 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-WorkDate6">
+
+
+                <div>
+
+
+                        <label for="id_WorkDate6">WorkDate6:</label>
+
+                            <input name="WorkDate6" class="vTextField" id="id_WorkDate6" type="text" maxlength="100" value="{{ userinfo.WorkDate6 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Work6">
+
+
+                <div>
+
+
+                        <label for="id_Work6">Work6:</label>
+
+                            <input name="Work6" class="vTextField" id="id_Work6" type="text" maxlength="100" value="{{ userinfo.Work6 }}">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Position6">
+
+
+                <div>
+
+
+                        <label for="id_Position6">Position6:</label>
+
+                            <input name="Position6" class="vTextField" id="id_Position6" type="text" maxlength="200" value="{{ userinfo.Position6 }}">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Skills Info</h2>
+
+
+        <div class="form-row field-Skill_1">
+
+
+                <div>
+
+
+                        <label for="id_Skill_1">Skill 1:</label>
+
+                            <input class="vTextField" id="id_Skill_1" maxlength="255" name="Skill_1" type="text" value="{{ userinfo.Skill_1 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_2">
+
+
+                <div>
+
+
+                        <label for="id_Skill_2">Skill 2:</label>
+
+                            <input class="vTextField" id="id_Skill_2" maxlength="255" name="Skill_2" type="text" value="{{ userinfo.Skill_2 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_3">
+
+
+                <div>
+
+
+                        <label for="id_Skill_3">Skill 3:</label>
+
+                            <input class="vTextField" id="id_Skill_3" maxlength="255" name="Skill_3" type="text" value="{{ userinfo.Skill_3 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_4">
+
+
+                <div>
+
+
+                        <label for="id_Skill_4">Skill 4:</label>
+
+                            <input class="vTextField" id="id_Skill_4" maxlength="255" name="Skill_4" type="text" value="{{ userinfo.Skill_4 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_5">
+
+
+                <div>
+
+
+                        <label for="id_Skill_5">Skill 5:</label>
+
+                            <input class="vTextField" id="id_Skill_5" maxlength="255" name="Skill_5" type="text" value="{{ userinfo.Skill_5 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_6">
+
+
+                <div>
+
+
+                        <label for="id_Skill_6">Skill 6:</label>
+
+                            <input class="vTextField" id="id_Skill_6" maxlength="255" name="Skill_6" type="text" value="{{ userinfo.Skill_6 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_7">
+
+
+                <div>
+
+
+                        <label for="id_Skill_7">Skill 7:</label>
+
+                            <input class="vTextField" id="id_Skill_7" maxlength="255" name="Skill_7" type="text" value="{{ userinfo.Skill_7 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_8">
+
+
+                <div>
+
+
+                        <label for="id_Skill_8">Skill 8:</label>
+
+                            <input class="vTextField" id="id_Skill_8" maxlength="255" name="Skill_8" type="text" value="{{ userinfo.Skill_8 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_9">
+
+
+                <div>
+
+
+                        <label for="id_Skill_9">Skill 9:</label>
+
+                            <input class="vTextField" id="id_Skill_9" maxlength="255" name="Skill_9" type="text" value="{{ userinfo.Skill_9 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_10">
+
+
+                <div>
+
+
+                        <label for="id_Skill_10">Skill 10:</label>
+
+                            <input class="vTextField" id="id_Skill_10" maxlength="255" name="Skill_10" type="text" value="{{ userinfo.Skill_10 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_11">
+
+
+                <div>
+
+
+                        <label for="id_Skill_11">Skill 11:</label>
+
+                            <input class="vTextField" id="id_Skill_11" maxlength="255" name="Skill_11" type="text" value="{{ userinfo.Skill_11 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_12">
+
+
+                <div>
+
+
+                        <label for="id_Skill_12">Skill 12:</label>
+
+                            <input class="vTextField" id="id_Skill_12" maxlength="255" name="Skill_12" type="text" value="{{ userinfo.Skill_12 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_13">
+
+
+                <div>
+
+
+                        <label for="id_Skill_13">Skill 13:</label>
+
+                            <input class="vTextField" id="id_Skill_13" maxlength="255" name="Skill_13" type="text" value="{{ userinfo.Skill_13 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_14">
+
+
+                <div>
+
+
+                        <label for="id_Skill_14">Skill 14:</label>
+
+                            <input class="vTextField" id="id_Skill_14" maxlength="255" name="Skill_14" type="text" value="{{ userinfo.Skill_14 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_15">
+
+
+                <div>
+
+
+                        <label for="id_Skill_15">Skill 15:</label>
+
+                            <input class="vTextField" id="id_Skill_15" maxlength="255" name="Skill_15" type="text" value="{{ userinfo.Skill_15 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_16">
+
+
+                <div>
+
+
+                        <label for="id_Skill_16">Skill 16:</label>
+
+                            <input class="vTextField" id="id_Skill_16" maxlength="255" name="Skill_16" type="text" value="{{ userinfo.Skill_16 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_17">
+
+
+                <div>
+
+
+                        <label for="id_Skill_17">Skill 17:</label>
+
+                            <input class="vTextField" id="id_Skill_17" maxlength="255" name="Skill_17" type="text" value="{{ userinfo.Skill_17 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_18">
+
+
+                <div>
+
+
+                        <label for="id_Skill_18">Skill 18:</label>
+
+                            <input class="vTextField" id="id_Skill_18" maxlength="255" name="Skill_18" type="text" value="{{ userinfo.Skill_18 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_19">
+
+
+                <div>
+
+
+                        <label for="id_Skill_19">Skill 19:</label>
+
+                            <input class="vTextField" id="id_Skill_19" maxlength="255" name="Skill_19" type="text" value="{{ userinfo.Skill_19 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_20">
+
+
+                <div>
+
+
+                        <label for="id_Skill_20">Skill 20:</label>
+
+                            <input class="vTextField" id="id_Skill_20" maxlength="255" name="Skill_20" type="text" value="{{ userinfo.Skill_20 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_21">
+
+
+                <div>
+
+
+                        <label for="id_Skill_21">Skill 21:</label>
+
+                            <input class="vTextField" id="id_Skill_21" maxlength="255" name="Skill_21" type="text" value="{{ userinfo.Skill_21 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_22">
+
+
+                <div>
+
+
+                        <label for="id_Skill_22">Skill 22:</label>
+
+                            <input class="vTextField" id="id_Skill_22" maxlength="255" name="Skill_22" type="text" value="{{ userinfo.Skill_22 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_23">
+
+
+                <div>
+
+
+                        <label for="id_Skill_23">Skill 23:</label>
+
+                            <input class="vTextField" id="id_Skill_23" maxlength="255" name="Skill_23" type="text" value="{{ userinfo.Skill_23 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_24">
+
+
+                <div>
+
+
+                        <label for="id_Skill_24">Skill 24:</label>
+
+                            <input class="vTextField" id="id_Skill_24" maxlength="255" name="Skill_24" type="text" value="{{ userinfo.Skill_24 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_25">
+
+
+                <div>
+
+
+                        <label for="id_Skill_25">Skill 25:</label>
+
+                            <input class="vTextField" id="id_Skill_25" maxlength="255" name="Skill_25" type="text" value="{{ userinfo.Skill_25 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_26">
+
+
+                <div>
+
+
+                        <label for="id_Skill_26">Skill 26:</label>
+
+                            <input class="vTextField" id="id_Skill_26" maxlength="255" name="Skill_26" type="text" value="{{ userinfo.Skill_26 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_27">
+
+
+                <div>
+
+
+                        <label for="id_Skill_27">Skill 27:</label>
+
+                            <input class="vTextField" id="id_Skill_27" maxlength="255" name="Skill_27" type="text" value="{{ userinfo.Skill_27 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_28">
+
+
+                <div>
+
+
+                        <label for="id_Skill_28">Skill 28:</label>
+
+                            <input class="vTextField" id="id_Skill_28" maxlength="255" name="Skill_28" type="text" value="{{ userinfo.Skill_28 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_29">
+
+
+                <div>
+
+
+                        <label for="id_Skill_29">Skill 29:</label>
+
+                            <input class="vTextField" id="id_Skill_29" maxlength="255" name="Skill_29" type="text" value="{{ userinfo.Skill_29 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Skill_30">
+
+
+                <div>
+
+
+                        <label for="id_Skill_30">Skill 30:</label>
+
+                            <input class="vTextField" id="id_Skill_30" maxlength="255" name="Skill_30" type="text" value="{{ userinfo.Skill_30 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Language Info</h2>
+
+
+        <div class="form-row field-Language_1">
+
+
+                <div>
+
+
+                        <label for="id_Language_1">Language 1:</label>
+
+                            <input class="vTextField" id="id_Language_1" maxlength="100" name="Language_1" type="text" value="{{ userinfo.Language_1 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_1_Quality">
+
+
+                <div>
+
+
+                        <label for="id_Language_1_Quality">Language 1 Quality:</label>
+
+                            <select id="id_Language_1_Quality" name="Language_1_Quality"  >
+<option selected="selected">{{ userinfo.Language_1_Quality }}</option>
+<option value="Fluent">Fluent</option>
+<option value="Good">Good</option>
+<option value="Bad">Bad</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_2">
+
+
+                <div>
+
+
+                        <label for="id_Language_2">Language 2:</label>
+
+                            <input class="vTextField" id="id_Language_2" maxlength="100" name="Language_2" type="text" value="{{ userinfo.Language_2 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_2_Quality">
+
+
+                <div>
+
+
+                        <label for="id_Language_2_Quality">Language 2 Quality:</label>
+
+                            <select id="id_Language_2_Quality" name="Language_2_Quality">
+<option selected="selected">{{ userinfo.Language_2_Quality }}</option>
+<option value="Fluent">Fluent</option>
+<option value="Good">Good</option>
+<option value="Bad">Bad</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_3">
+
+
+                <div>
+
+
+                        <label for="id_Language_3">Language 3:</label>
+
+                            <input class="vTextField" id="id_Language_3" maxlength="100" name="Language_3" type="text" value="{{ userinfo.Language_3 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_3_Quality">
+
+
+                <div>
+
+
+                        <label for="id_Language_3_Quality">Language 3 Quality:</label>
+
+                            <select id="id_Language_3_Quality" name="Language_3_Quality">
+<option selected="selected">{{ userinfo.Language_3_Quality }}</option>
+<option value="Fluent">Fluent</option>
+<option value="Good">Good</option>
+<option value="Bad">Bad</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_4">
+
+
+                <div>
+
+
+                        <label for="id_Language_4">Language 4:</label>
+
+                            <input class="vTextField" id="id_Language_4" maxlength="100" name="Language_4" type="text" value="{{ userinfo.Language_4 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_4_Quality">
+
+
+                <div>
+
+
+                        <label for="id_Language_4_Quality">Language 4 Quality:</label>
+
+                            <select id="id_Language_4_Quality" name="Language_4_Quality">
+<option selected="selected">{{ userinfo.Language_4_Quality }}</option>
+<option value="Fluent">Fluent</option>
+<option value="Good">Good</option>
+<option value="Bad">Bad</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_5">
+
+
+                <div>
+
+
+                        <label for="id_Language_5">Language 5:</label>
+
+                            <input class="vTextField" id="id_Language_5" maxlength="100" name="Language_5" type="text" value="{{ userinfo.Language_5 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Language_5_Quality">
+
+
+                <div>
+
+
+                        <label for="id_Language_5_Quality">Language 5 Quality:</label>
+
+                            <select id="id_Language_5_Quality" name="Language_5_Quality">
+<option selected="selected">{{ userinfo.Language_5_Quality }}</option>
+<option value="Fluent">Fluent</option>
+<option value="Good">Good</option>
+<option value="Bad">Bad</option>
+</select>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Certificates Info</h2>
+
+
+        <div class="form-row field-Certificate_1">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_1">Certificate 1:</label>
+
+                            <input class="vTextField" id="id_Certificate_1" maxlength="200" name="Certificate_1" type="text" value="{{ userinfo.Certificate_1 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_2">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_2">Certificate 2:</label>
+
+                            <input class="vTextField" id="id_Certificate_2" maxlength="200" name="Certificate_2" type="text" value="{{ userinfo.Certificate_2 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_3">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_3">Certificate 3:</label>
+
+                            <input class="vTextField" id="id_Certificate_3" maxlength="200" name="Certificate_3" type="text" value="{{ userinfo.Certificate_3 }}" />
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_4">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_4">Certificate 4:</label>
+
+                            <input class="vTextField" id="id_Certificate_4" maxlength="200" name="Certificate_4" type="text" value="{{ userinfo.Certificate_4 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_5">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_5">Certificate 5:</label>
+
+                            <input class="vTextField" id="id_Certificate_5" maxlength="200" name="Certificate_5" type="text" value="{{ userinfo.Certificate_5 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_6">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_6">Certificate 6:</label>
+
+                            <input class="vTextField" id="id_Certificate_6" maxlength="200" name="Certificate_6" type="text" value="{{ userinfo.Certificate_6 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_7">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_7">Certificate 7:</label>
+
+                            <input class="vTextField" id="id_Certificate_7" maxlength="200" name="Certificate_7" type="text" value="{{ userinfo.Certificate_7 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_8">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_8">Certificate 8:</label>
+
+                            <input class="vTextField" id="id_Certificate_8" maxlength="200" name="Certificate_8" type="text" value="{{ userinfo.Certificate_8 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_9">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_9">Certificate 9:</label>
+
+                            <input class="vTextField" id="id_Certificate_9" maxlength="200" name="Certificate_9" type="text" value="{{ userinfo.Certificate_9 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-Certificate_10">
+
+
+                <div>
+
+
+                        <label for="id_Certificate_10">Certificate 10:</label>
+
+                            <input class="vTextField" id="id_Certificate_10" maxlength="200" name="Certificate_10" type="text" value="{{ userinfo.Certificate_10 }}"/>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+    <form method="post" action={% url "BaseForm" userinfo%}>
+        {% csrf_token %}
+
+        <div class="submit-row">
+            <input type="submit" value="Save" class="default" name="_save" />
+
+        </div>
+    </form>
+
+
+
+
+    <script type="text/javascript"
+            id="django-admin-form-add-constants"
+            src={% static "admin/js/change_form.js"%}
+            >
+    </script>
+
+
+
+
+<script type="text/javascript"
+        id="django-admin-prepopulated-fields-constants"
+        src={% static "admin/js/prepopulate_init.js"%}
+        data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

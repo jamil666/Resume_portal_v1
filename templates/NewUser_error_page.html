@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+</head>
+<body>
+
+    <div align="center" style="font-size: xx-large; color: #ff0023">
+
+        <form method="post" action={% url 'NewUser' %}>
+
+            {% csrf_token %}
+
+            </br>
+
+            {{ message }}
+
+            </br>
+            </br>
+
+            <input type="submit" name="BackButton" value="Back to registration menu">
+
+        </form>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE >
+<html >
+
+{% load static %}
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Login Page</title>
+
+</head>
+
+<body class="contact">
+
+    <form method="post" action="/{{ userinfo }}">
+
+        {% csrf_token %}
+
+        <div id="login" align="center">
+
+            <h1>Please input your username and password!</h1>
+            <h1>If you not registered yet, please follow below link!</h1>
+
+            <a href="{% url 'NewUser' %}"> Register new user </a>
+
+           <p> Username: {{ LoginForm.Username}} </p>
+           <p> Password: {{ LoginForm.Password}} </p>
+
+            <input type="submit" value="Continue">
+
+        </div>
+    </form>
+
+    <div id="Message" align="center">
+        {% if Message %}
+            <h3> {{ Message }} </h3>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

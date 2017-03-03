@@ -1,0 +1,33 @@
+<!DOCTYPE >
+<html >
+
+{% load static %}
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Contact Form</title>
+	<link rel="stylesheet" type="text/css" href={% static "css/blue.css"%} />
+
+</head>
+
+<body class="contact">
+<form method="post" action={% url 'send_mail' %} id="contactform">
+    {% csrf_token %}
+
+        <label for="Name">Name:</label>
+
+            <input type="text" name="Name" id="Name" class="required" />
+
+        <label for="Email">Email:</label>
+
+            <input type="text" name="Email" id="Email" class="required email" />
+
+        <label for="Message">Message:</label>
+
+            <textarea name="Message" id="Message" > </textarea>
+
+        <input type="submit" name="submit" value="SEND" class="submit-button" />
+</form>
+
+</body>
+</html>
